@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civitas 数据可视化</title>
+    <link rel="stylesheet" href="visualization.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Civitas 数据可视化</h1>
+            <div class="update-info">
+                <span>上次更新: <span id="last-updated">加载中...</span></span>
+                <button id="refresh-btn">刷新数据</button>
+            </div>
+        </header>
+
+        <div class="stats-container">
+            <div class="stats-card">
+                <h3>统计摘要</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">总用户数</span>
+                        <span class="stat-value" id="total-users">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">状态记录</span>
+                        <span class="stat-value" id="status-records">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">技能记录</span>
+                        <span class="stat-value" id="skill-records">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">历史记录总数</span>
+                        <span class="stat-value" id="history-records">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="data-container">
+            <div class="user-list-container">
+                <h3>用户列表</h3>
+                <div class="search-box">
+                    <input type="text" id="user-search" placeholder="搜索用户...">
+                </div>
+                <ul id="user-list">
+                    <li class="loading">加载中...</li>
+                </ul>
+            </div>
+            
+            <div class="user-data-container">
+                <div class="user-data-header">
+                    <h2 id="selected-user">请选择用户</h2>
+                </div>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="status">状态数据</button>
+                    <button class="tab-btn" data-tab="skills">技能数据</button>
+                    <button class="tab-btn" data-tab="charts">数据图表</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-pane active" id="status-tab">
+                        <div class="status-grid" id="status-grid">
+                            <div class="empty-message">选择一个用户以查看状态数据</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="skills-tab">
+                        <div class="skills-list" id="skills-list">
+                            <div class="empty-message">选择一个用户以查看技能数据</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="charts-tab">
+                        <div class="charts-container">
+                            <div class="chart-wrapper">
+                                <h3>状态数据图表</h3>
+                                <canvas id="status-chart"></canvas>
+                            </div>
+                            <div class="chart-wrapper">
+                                <h3>技能水平图表</h3>
+                                <div class="skill-select-wrapper">
+                                    <select id="skill-select">
+                                        <option value="">选择技能...</option>
+                                    </select>
+                                </div>
+                                <canvas id="skill-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="visualization.js"></script>
+</body>
+</html>

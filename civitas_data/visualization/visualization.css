@@ -1,0 +1,326 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+h1 {
+    color: #24292e;
+    font-size: 24px;
+}
+
+h2 {
+    color: #24292e;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #24292e;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #0366d6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0256b9;
+}
+
+.update-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    color: #586069;
+}
+
+/* 统计卡片 */
+.stats-container {
+    margin-bottom: 20px;
+}
+
+.stats-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #f6f8fa;
+    border-radius: 6px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #586069;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #24292e;
+}
+
+/* 数据容器 */
+.data-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+}
+
+/* 用户列表 */
+.user-list-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.search-box {
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#user-list {
+    list-style: none;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+#user-list li {
+    padding: 10px;
+    border-bottom: 1px solid #e1e4e8;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#user-list li:hover {
+    background-color: #f6f8fa;
+}
+
+#user-list li.active {
+    background-color: #0366d6;
+    color: white;
+}
+
+#user-list li.loading {
+    cursor: default;
+    color: #586069;
+}
+
+/* 用户数据 */
+.user-data-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user-data-header {
+    margin-bottom: 20px;
+}
+
+/* 标签页 */
+.tabs {
+    display: flex;
+    gap: 1px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.tab-btn {
+    background-color: transparent;
+    color: #586069;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover {
+    color: #0366d6;
+    background-color: transparent;
+}
+
+.tab-btn.active {
+    color: #0366d6;
+    border-bottom: 2px solid #0366d6;
+    background-color: transparent;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* 状态数据 */
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.status-item {
+    padding: 15px;
+    background-color: #f6f8fa;
+    border-radius: 6px;
+}
+
+.status-label {
+    font-size: 14px;
+    color: #586069;
+    margin-bottom: 5px;
+}
+
+.status-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #24292e;
+}
+
+/* 技能数据 */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.skill-card {
+    padding: 15px;
+    background-color: #f6f8fa;
+    border-radius: 6px;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    font-weight: bold;
+    color: #24292e;
+}
+
+.skill-level {
+    color: #0366d6;
+}
+
+.skill-details {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.skill-detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.skill-mini-header {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.skill-mini-list {
+    font-size: 14px;
+}
+
+.skill-mini-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+}
+
+/* 图表 */
+.charts-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.chart-wrapper {
+    padding: 15px;
+    background-color: #f6f8fa;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.skill-select-wrapper {
+    margin-bottom: 15px;
+}
+
+.skill-select-wrapper select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* 空状态 */
+.empty-message {
+    padding: 30px;
+    text-align: center;
+    color: #586069;
+    background-color: #f6f8fa;
+    border-radius: 6px;
+}

@@ -1,0 +1,216 @@
+:root {
+    --primary-color: #0366d6;
+    --background-color: #ffffff;
+    --text-color: #24292e;
+    --border-color: #e1e4e8;
+    --header-bg: #f6f8fa;
+    --hover-bg: #f6f8fa;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --error-color: #cb2431;
+    --high-color: #28a745;
+    --medium-color: #0366d6;
+    --low-color: #cb2431;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.search-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#user-search {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+#user-search:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
+}
+
+.refresh-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: background-color 0.2s;
+}
+
+.refresh-btn:hover {
+    background-color: #0256b0;
+}
+
+.table-container {
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 1px 3px var(--shadow-color);
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+thead {
+    background-color: var(--header-bg);
+}
+
+thead tr th {
+    text-align: left;
+    padding: 12px 15px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    background-color: var(--header-bg);
+    z-index: 10;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--hover-bg);
+}
+
+tbody tr:hover {
+    background-color: rgba(3, 102, 214, 0.05);
+}
+
+tbody td {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 第一列（用户名）固定 */
+th:first-child, td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background-color: inherit;
+    border-right: 1px solid var(--border-color);
+}
+
+thead th:first-child {
+    z-index: 11; /* 确保左上角的单元格在所有单元格之上 */
+    background-color: var(--header-bg);
+}
+
+.empty-message {
+    text-align: center;
+    padding: 30px;
+    color: #586069;
+    font-style: italic;
+}
+
+.error-message {
+    text-align: center;
+    padding: 30px;
+    color: var(--error-color);
+    font-weight: 500;
+}
+
+/* 状态颜色 */
+.status-high {
+    color: var(--high-color);
+    font-weight: 500;
+}
+
+.status-medium {
+    color: var(--medium-color);
+}
+
+.status-low {
+    color: var(--low-color);
+    font-weight: 500;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: var(--header-bg);
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+.stat-title {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: #586069;
+}
+
+.stat-value {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+    color: #586069;
+    font-size: 12px;
+}
+
+/* 对于移动设备 */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    h1 {
+        margin-bottom: 10px;
+    }
+    
+    .table-container {
+        margin-bottom: 15px;
+    }
+}

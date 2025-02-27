@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civitas 数据可视化表格</title>
+    <link rel="stylesheet" href="visualization.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Civitas 数据可视化表格</h1>
+            <div class="update-info">
+                <span>上次更新: <span id="last-updated">加载中...</span></span>
+                <button id="refresh-btn">刷新数据</button>
+            </div>
+        </header>
+
+        <div class="stats-container">
+            <div class="stats-card">
+                <h3>统计摘要</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">总用户数</span>
+                        <span class="stat-value" id="total-users">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">状态记录</span>
+                        <span class="stat-value" id="status-records">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">技能记录</span>
+                        <span class="stat-value" id="skill-records">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">用户详情记录</span>
+                        <span class="stat-value" id="userdetail-records">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">历史记录总数</span>
+                        <span class="stat-value" id="history-records">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="user-search" placeholder="搜索用户...">
+        </div>
+
+        <div class="table-container">
+            <table id="parameters-table">
+                <thead>
+                    <tr>
+                        <th class="parameter-name">参数</th>
+                        <!-- 用户名列会在这里动态添加 -->
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- 表格行会通过JavaScript动态添加 -->
+                    <tr>
+                        <td colspan="2" class="loading-message">加载用户数据中...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="visualization.js"></script>
+</body>
+</html>
