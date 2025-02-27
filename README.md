@@ -54,6 +54,10 @@ python consolidated_data_server.py
 - `/api/stats` - 获取数据统计信息
 - `/api/user_detail` - 获取用户详细信息
 
+## 项目目的
+
+该项目旨在分析Civitas2游戏数据，提供数据洞察和可视化，帮助玩家更好地了解游戏进程和优化游戏策略。
+
 ## 开发与贡献
 
 欢迎提出问题和建议，也欢迎贡献代码。
